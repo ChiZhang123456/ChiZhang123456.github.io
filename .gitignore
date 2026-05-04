@@ -1,0 +1,30 @@
+# Local source materials
+*.doc
+*.docx
+*.pdf
+
+# Original images kept outside the deployed assets folder
+*.jpg
+*.jpeg
+*.png
+*.webp
+!assets/
+!assets/*.jpg
+!assets/*.jpeg
+!assets/*.png
+!assets/*.webp
+
+# Unused/private deployment extras
+assets/kobe-bryant-2012.jpg
+assets/portrait-home.jpg
+assets/snow-fieldwork.jpg
+assets/paper-global-energy.jpg
+assets/paper-electron-magnetotail.jpg
+
+# Render previews and local verification
+*-preview.png
+verify-render.cjs
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
