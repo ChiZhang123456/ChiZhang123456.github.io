@@ -102,14 +102,51 @@ nav a:hover {
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.horizontal-deck::-webkit-scrollbar {
+  display: none;
 }
 
 .horizontal-deck > section {
+  position: relative;
   flex: 0 0 100vw;
   height: 100svh;
   overflow-y: auto;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+.page-arrow {
+  position: absolute;
+  z-index: 12;
+  top: 50%;
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(17, 25, 28, 0.68);
+  box-shadow: 0 14px 36px rgba(17, 25, 28, 0.18);
+  font-size: 2.1rem;
+  line-height: 1;
+  text-decoration: none;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+}
+
+.page-arrow.prev {
+  left: 22px;
+}
+
+.page-arrow.next {
+  right: 22px;
+}
+
+.page-arrow:hover {
+  background: var(--forest);
 }
 
 .horizontal-deck .section,
@@ -273,6 +310,47 @@ h3 {
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   gap: clamp(34px, 6vw, 72px);
   align-items: center;
+}
+
+.horizontal-deck .intro-grid {
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  grid-template-areas:
+    "copy copy"
+    "card text";
+  align-items: center;
+  row-gap: 26px;
+}
+
+.horizontal-deck .intro-copy {
+  grid-area: copy;
+  justify-self: center;
+  max-width: 880px;
+  text-align: center;
+}
+
+.horizontal-deck .intro-copy p:not(.section-kicker) {
+  display: none;
+}
+
+.horizontal-deck .profile-card {
+  grid-area: card;
+  justify-self: end;
+  grid-template-columns: 1fr;
+  width: min(360px, 100%);
+}
+
+.horizontal-deck .profile-card img {
+  width: 100%;
+  aspect-ratio: 1.25;
+}
+
+.horizontal-deck .intro-grid::after {
+  content: "My work primarily uses in-situ spacecraft data, especially NASA's MAVEN measurements, to analyze the characteristics of the Martian space environment, solar-wind-driven plasma dynamics at Mars, and ion acceleration and escape processes.";
+  grid-area: text;
+  max-width: 620px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.65;
 }
 
 .intro-grid > div > p,
@@ -701,6 +779,47 @@ dd {
   align-items: start;
 }
 
+.publication-panel {
+  background: #e8efec;
+}
+
+.horizontal-deck .publication-panel {
+  align-items: start;
+  padding-top: 82px;
+}
+
+.publication-embedded-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.publication-embedded-heading {
+  position: sticky;
+  top: 20px;
+}
+
+.publication-embedded-heading h2 {
+  font-size: clamp(2.4rem, 5vw, 5rem);
+}
+
+.horizontal-deck .publication-detail-list {
+  gap: 10px;
+}
+
+.horizontal-deck .publication-detail-list li {
+  padding: 15px 52px 15px 18px;
+}
+
+.horizontal-deck .publication-detail-list h3 {
+  font-size: 1rem;
+}
+
+.horizontal-deck .publication-detail-list .authors {
+  font-size: 0.88rem;
+}
+
 .publication-note {
   position: sticky;
   top: 92px;
@@ -975,6 +1094,14 @@ footer p {
 
   .publication-list img {
     width: 100%;
+  }
+
+  .publication-embedded-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-embedded-heading {
+    position: static;
   }
 
   .publication-full-list li {
