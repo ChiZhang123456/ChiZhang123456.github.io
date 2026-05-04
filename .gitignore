@@ -20,6 +20,8 @@ assets/portrait-home.jpg
 assets/snow-fieldwork.jpg
 assets/paper-global-energy.jpg
 assets/paper-electron-magnetotail.jpg
+extracted-ion-escape-*.jp2
+pdf-page-*.png
 
 # Render previews and local verification
 *-preview.png
