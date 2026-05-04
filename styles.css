@@ -140,11 +140,11 @@ nav a:hover {
 }
 
 .page-arrow.prev {
-  left: 28px;
+  left: 20px;
 }
 
 .page-arrow.next {
-  right: 28px;
+  right: 20px;
 }
 
 .page-arrow:hover {
@@ -161,7 +161,15 @@ nav a:hover {
 }
 
 .horizontal-deck .section-heading h2 {
-  font-size: clamp(2.1rem, 4vw, 3.8rem);
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+}
+
+.horizontal-deck .featured-section .section-heading {
+  margin-bottom: 22px;
+}
+
+.horizontal-deck .featured-section .section-action {
+  margin-top: 14px;
 }
 
 .horizontal-deck .hero {
@@ -316,10 +324,10 @@ h3 {
 }
 
 .horizontal-deck .intro-grid {
-  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
   grid-template-areas:
     "copy copy"
-    "card text";
+    "photo card";
   align-items: center;
   row-gap: 26px;
 }
@@ -335,25 +343,37 @@ h3 {
   display: none;
 }
 
-.horizontal-deck .profile-card {
-  grid-area: card;
-  justify-self: end;
-  grid-template-columns: 1fr;
-  width: min(360px, 100%);
+.role-photo {
+  display: none;
 }
 
-.horizontal-deck .profile-card img {
-  width: 100%;
-  aspect-ratio: 1.25;
+.horizontal-deck .role-photo {
+  display: block;
+  grid-area: photo;
+  justify-self: end;
+  width: min(430px, 100%);
+  aspect-ratio: 0.9;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.horizontal-deck .profile-card {
+  grid-area: card;
+  justify-self: start;
+  grid-template-columns: 1fr;
+  width: min(560px, 100%);
+}
+
+.horizontal-deck .profile-card > p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.58;
 }
 
 .horizontal-deck .intro-grid::after {
-  content: "My work primarily uses in-situ spacecraft data, especially NASA's MAVEN measurements, to analyze the characteristics of the Martian space environment, solar-wind-driven plasma dynamics at Mars, and ion acceleration and escape processes.";
-  grid-area: text;
-  max-width: 620px;
-  color: var(--muted);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.65;
+  content: none;
 }
 
 .intro-grid > div > p,
@@ -429,7 +449,7 @@ dd {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   align-items: stretch;
-  height: min(500px, calc(100svh - 385px));
+  height: min(480px, calc(100svh - 360px));
 }
 
 .featured-grid article {
@@ -468,9 +488,10 @@ dd {
 }
 
 .horizontal-deck .featured-grid .featured-lead > img {
-  height: 38%;
+  height: 44%;
   aspect-ratio: auto;
-  object-fit: cover;
+  object-fit: contain;
+  background: #050708;
 }
 
 .featured-grid .featured-lead > div {
@@ -479,7 +500,7 @@ dd {
 }
 
 .horizontal-deck .featured-grid .featured-lead > div {
-  height: 62%;
+  height: 56%;
   padding: 18px 22px;
   overflow: hidden;
 }
@@ -495,8 +516,10 @@ dd {
 
 .horizontal-deck .featured-card-media {
   width: calc(100% + 32px);
-  height: 72px;
+  height: 96px;
   margin: -16px -16px 14px;
+  object-fit: contain;
+  background: #f7f6f1;
 }
 
 .featured-grid .year {
@@ -543,6 +566,10 @@ dd {
 .horizontal-deck .featured-grid .doi,
 .horizontal-deck .featured-grid a {
   font-size: 0.88rem;
+}
+
+.horizontal-deck .featured-grid article:not(.featured-lead) a {
+  display: none;
 }
 
 .featured-grid .featured-lead p {
