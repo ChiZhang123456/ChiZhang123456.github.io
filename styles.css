@@ -123,14 +123,16 @@ nav a:hover {
   z-index: 12;
   top: 50%;
   display: inline-grid;
-  width: 48px;
-  height: 48px;
+  width: 68px;
+  height: 68px;
   place-items: center;
   border-radius: 999px;
   color: var(--white);
-  background: rgba(17, 25, 28, 0.68);
-  box-shadow: 0 14px 36px rgba(17, 25, 28, 0.18);
-  font-size: 2.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: rgba(17, 25, 28, 0.82);
+  box-shadow: 0 18px 48px rgba(17, 25, 28, 0.28);
+  font-size: 2.7rem;
+  font-weight: 700;
   line-height: 1;
   text-decoration: none;
   transform: translateY(-50%);
@@ -138,15 +140,16 @@ nav a:hover {
 }
 
 .page-arrow.prev {
-  left: 22px;
+  left: 28px;
 }
 
 .page-arrow.next {
-  right: 22px;
+  right: 28px;
 }
 
 .page-arrow:hover {
   background: var(--forest);
+  transform: translateY(-50%) scale(1.04);
 }
 
 .horizontal-deck .section,

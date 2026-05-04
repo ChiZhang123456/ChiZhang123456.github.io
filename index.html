@@ -475,22 +475,5 @@
     <p>Chi Zhang | Center for Space Physics, Boston University</p>
     <p>Last updated May 2026</p>
   </footer>
-  <script>
-    const deck = document.querySelector(".horizontal-deck");
-
-    if (deck) {
-      deck.addEventListener("wheel", (event) => {
-        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
-          return;
-        }
-
-        event.preventDefault();
-        deck.scrollBy({
-          left: event.deltaY,
-          behavior: "smooth"
-        });
-      }, { passive: false });
-    }
-  </script>
 </body>
 </html>
