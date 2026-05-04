@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
   <header class="site-header" aria-label="Primary navigation">
     <a class="brand" href="#top">Chi Zhang</a>
     <nav>
@@ -18,11 +18,10 @@
       <a href="#cv">CV</a>
       <a href="publications.html">Publications</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
+  <main id="top" class="horizontal-deck">
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-media" aria-hidden="true">
         <img src="assets/aurora-sweden.jpg" alt="">
@@ -34,11 +33,11 @@
         <p class="hero-copy">
           I study solar wind interaction with planets, planetary space environments, electromagnetic field structures, and plasma dynamics in magnetospheres and induced magnetospheres.
         </p>
+        <p class="hero-email"><a href="mailto:zc199508@bu.edu">zc199508@bu.edu</a></p>
         <div class="hero-actions" aria-label="Profile links">
           <a class="button primary" href="https://www.researchgate.net/profile/Chi-Zhang-248?ev=hdr_xprf">ResearchGate</a>
           <a class="button secondary" href="https://scholar.google.com/citations?user=lSBqPlkAAAAJ&hl=zh-CN">Google Scholar</a>
           <a class="button secondary" href="https://orcid.org/0000-0001-9154-596X">ORCID</a>
-          <a class="button secondary" href="https://www.bu.edu/csp/profiles/chi-zhang/">BU Profile</a>
           <a class="button secondary" href="publications.html">Publications</a>
         </div>
       </div>
@@ -49,7 +48,7 @@
         <div class="section-heading">
           <p class="section-kicker">Featured Work</p>
           <h2 id="featured-title">Research Highlights</h2>
-          <p class="muted">Representative papers and a behind-the-paper essay on Martian ion drift, ion escape, magnetic fields, electrons, and solar wind interaction.</p>
+          <p class="muted">Representative papers on Martian ion drift, ion escape, magnetic fields, electrons, and solar wind interaction.</p>
         </div>
         <div class="featured-grid">
           <article class="featured-lead">
@@ -264,26 +263,28 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact-band">
-      <div class="container contact-grid">
-        <div>
-          <p class="section-kicker">Contact</p>
-          <h2>Let's connect</h2>
-          <p>For research conversations, collaborations, or paper inquiries, email is the best place to start.</p>
-        </div>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:zc199508@bu.edu">Email Chi</a>
-          <a class="button secondary" href="https://www.researchgate.net/profile/Chi-Zhang-248?ev=hdr_xprf">ResearchGate</a>
-          <a class="button secondary" href="https://orcid.org/0000-0001-9154-596X">ORCID</a>
-          <a class="button secondary" href="https://scholar.google.com/citations?user=lSBqPlkAAAAJ&hl=zh-CN">Scholar Profile</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
     <p>Chi Zhang | Center for Space Physics, Boston University</p>
     <p>Last updated May 2026</p>
   </footer>
+  <script>
+    const deck = document.querySelector(".horizontal-deck");
+
+    if (deck) {
+      deck.addEventListener("wheel", (event) => {
+        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+          return;
+        }
+
+        event.preventDefault();
+        deck.scrollBy({
+          left: event.deltaY,
+          behavior: "smooth"
+        });
+      }, { passive: false });
+    }
+  </script>
 </body>
 </html>
