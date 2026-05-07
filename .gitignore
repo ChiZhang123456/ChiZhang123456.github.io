@@ -9,10 +9,14 @@
 *.png
 *.webp
 !assets/
-!assets/*.jpg
-!assets/*.jpeg
-!assets/*.png
-!assets/*.webp
+assets/*
+!assets/aurora-sweden.jpg
+!assets/portrait-library.jpg
+!assets/paper-ion-drift.jpg
+!assets/paper-anomalous-ion-escape.jpg
+!assets/paper-global-energy.jpg
+!assets/paper-3d-magnetic-field.jpg
+!assets/paper-ulf-wave.png
 
 # Unused/private deployment extras
 assets/kobe-bryant-2012.jpg
