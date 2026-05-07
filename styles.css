@@ -518,7 +518,7 @@ dd {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   align-items: stretch;
-  height: clamp(560px, calc(100svh - 220px), 680px);
+  height: clamp(640px, calc(100svh - 160px), 760px);
   gap: 18px;
 }
 
@@ -542,7 +542,7 @@ dd {
 
 .horizontal-deck .featured-grid article:not(.featured-lead) {
   display: grid;
-  grid-template-rows: clamp(170px, 24svh, 230px) auto auto auto;
+  grid-template-rows: clamp(210px, 30svh, 280px) auto auto auto;
 }
 
 .featured-grid .featured-lead {
@@ -567,7 +567,7 @@ dd {
 }
 
 .horizontal-deck .featured-grid .featured-lead > img {
-  height: 50%;
+  height: 54%;
   aspect-ratio: auto;
   object-fit: contain;
   background: #050708;
@@ -579,7 +579,7 @@ dd {
 }
 
 .horizontal-deck .featured-grid .featured-lead > div {
-  height: 50%;
+  height: 46%;
   padding: 18px 22px;
   overflow: hidden;
 }
@@ -595,8 +595,8 @@ dd {
 
 .horizontal-deck .featured-card-media {
   width: calc(100% + 36px);
-  height: clamp(170px, 24svh, 230px);
-  flex: 0 0 clamp(170px, 24svh, 230px);
+  height: clamp(210px, 30svh, 280px);
+  flex: 0 0 clamp(210px, 30svh, 280px);
   margin: -18px -18px 16px;
   object-fit: contain;
   background: #f7f6f1;
