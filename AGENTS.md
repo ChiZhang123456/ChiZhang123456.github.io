@@ -62,6 +62,7 @@ Only these image assets should be tracked and uploaded:
 - `assets/paper-global-energy.jpg`
 - `assets/paper-3d-magnetic-field.jpg`
 - `assets/paper-ulf-wave.png`
+- `assets/paper-khi-ion-escape.png`
 
 Other local `.jpg`/`.png` files are source material or previews and should not be uploaded. `.gitignore` is configured to allow only the deployed assets above.
 
@@ -89,6 +90,8 @@ Featured papers currently shown on the homepage:
 
 - Detection of magnetospheric ion drift patterns at Mars
   - DOI: https://doi.org/10.1038/s41467-023-42630-7
+- Simultaneous Mars-orbit observations reveal Kelvin-Helmholtz-instability-driven bulk atmospheric ion escape
+  - DOI: https://doi.org/10.1126/sciadv.aed9072
 - Anomalous Transient Enhancement of Planetary Ion Escape at Mars
   - DOI: https://doi.org/10.1038/s41467-025-58351-y
 - Global Energy Transport and Conversion in the Solar Wind-Mars Interaction: MAVEN Observations
